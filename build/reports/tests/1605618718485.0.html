@@ -1,0 +1,653 @@
+<html lang="en" data-ng-app="bear.go" class="ng-scope"><head><style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style><style type="text/css">.uib-time input{width:50px;}</style><style type="text/css">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow,[uib-popover-html-popup].popover.top-left > .arrow,[uib-popover-html-popup].popover.top-right > .arrow,[uib-popover-html-popup].popover.bottom-left > .arrow,[uib-popover-html-popup].popover.bottom-right > .arrow,[uib-popover-html-popup].popover.left-top > .arrow,[uib-popover-html-popup].popover.left-bottom > .arrow,[uib-popover-html-popup].popover.right-top > .arrow,[uib-popover-html-popup].popover.right-bottom > .arrow,[uib-popover-template-popup].popover.top-left > .arrow,[uib-popover-template-popup].popover.top-right > .arrow,[uib-popover-template-popup].popover.bottom-left > .arrow,[uib-popover-template-popup].popover.bottom-right > .arrow,[uib-popover-template-popup].popover.left-top > .arrow,[uib-popover-template-popup].popover.left-bottom > .arrow,[uib-popover-template-popup].popover.right-top > .arrow,[uib-popover-template-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style><style type="text/css">.uib-datepicker-popup.dropdown-menu{display:block;float:none;margin:0;}.uib-button-bar{padding:10px 9px 2px;}</style><style type="text/css">.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute !important;top:-9999px !important;width:50px !important;height:50px !important;overflow:scroll !important;}.uib-position-body-scrollbar-measure{overflow:scroll !important;}</style><style type="text/css">.uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-left,.uib-right{width:100%}</style><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+		<!-- Google Tag Manager -->
+		<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-WNZ3397"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-WNZ3397');</script>
+		<!-- End Google Tag Manager -->
+		<meta charset="utf-8">
+		<title translate="common.APPTITLE_ARGO" class="ng-scope">ARGO Campaign manager</title>
+		<meta name="description" content="Bear administration area">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="icon" type="image/png" href="assets/img/favicon.ico">
+	<link href="css/bear.min.202011161619.css" rel="stylesheet"><style type="text/css">/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style></head>
+	<body ng-controller="AppCtrl" class="ng-scope">
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNZ3397" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    	<!-- End Google Tag Manager (noscript) -->
+
+		<!-- ngIf: online===false -->
+
+		<!-- uiView: --><div class="app clearfix ng-scope" id="app" ui-view=""><!-- ngInclude: 'tpl/blocks/header.html' --><div ng-hide="false" data-ng-include="'tpl/blocks/header.html'" class="ng-scope"><div ng-show="isLoading" class="butterbar active ng-scope ng-hide">
+	<span class="bar butterbar"></span>
+</div>
+
+<header ng-controller="HeaderController" ng-class="{'header-small' : state.includes('app.assets.creator')}" class="ng-scope">
+	<div class="wrap">
+		<div class="pull-left">
+			<a href="/">
+				<img id="logo" class="logo-small" src="./assets/img/logo_argo_white.svg" alt="Logo Bear">
+			</a>
+		</div>
+		<div>
+			<!-- ngInclude: 'tpl/blocks/nav.html' --><div ng-include="'tpl/blocks/nav.html'" class="ng-scope"><nav id="menu" class="ng-scope">
+		<a id="menu-burger" class="click m-t-20" ng-click="bIsBurgerExtended = true">
+				<span id="menu-burger"><i class="icon-burger-menu"></i></span>
+				<span class="m-l-10">Menu</span>
+		</a>
+	<div id="menu-navigation">
+		<div id="close-cross" ng-show="bIsBurgerExtended" ng-click="bIsBurgerExtended = false" class="ng-hide">
+			<i class="icon-close"></i>
+		</div>
+		<ul ng-class="{'burger-extended' : bIsBurgerExtended}">
+			<li ng-show="states['app.dashboard']" ui-sref-active="active" class="active">
+			<a ui-sref="app.dashboard" ui-sref-opts="{reload:true}" href="#/app/dashboard">
+					<span translate="nav.DASHBOARD" class="ng-scope">Dashboard</span>
+				</a>
+			</li>
+	
+			<li ng-show="states['app.campaigns']" ui-sref-active="active">
+				<a ui-sref="app.campaigns.grid.folder({iFolderId:null,page:1})" ui-sref-opts="{reload:true}" href="#/app/campaigns/grid//p1">
+					<span translate="nav.CAMPAIGNS" class="ng-scope">Campaigns</span>
+				</a>
+			</li>
+	
+			<li ng-show="states['app.media']" ui-sref-active="active">
+				<a ui-sref="app.media.folder" ui-sref-opts="{reload:true}" href="#/app/media//p1">
+					<span translate="nav.MEDIALIBRARY" class="ng-scope">Media library</span>
+				</a>
+			</li>
+	
+			<li ng-show="states['app.log']" ui-sref-active="active">
+				<a ui-sref="app.log" ui-sref-opts="{reload:true}" href="#/app/log/p1">
+					<span translate="nav.LOG" class="ng-scope">Log</span>
+				</a>
+			</li>
+	
+			<li ng-show="states['app.stats']" ui-sref-active="active">
+				<a ui-sref="app.stats.global" ui-sref-opts="{reload:true}" href="#/app/stats/overview">
+					<span translate="nav.STATS" class="ng-scope">Stats</span>
+				</a>
+			</li>
+	
+			<li ng-show="states['app.application']">
+				<a ui-sref="app.application" ui-sref-opts="{reload:true}" href="#/app/application/">
+					<span translate="nav.APPLICATION" class="ng-scope">Applications</span>
+				</a>
+			</li>
+	
+			<li ng-show="states['app.clients']">
+				<a ui-sref="app.clients" ui-sref-opts="{reload:true}" href="#/app/clients/p1">
+					<span translate="nav.CLIENTS" class="ng-scope">Clients</span>
+				</a>
+			</li>
+	
+			<li ng-show="states['app.channels']">
+				<a ui-sref="app.channels" ui-sref-opts="{reload:true}" href="#/app/channels/p1">
+					<span translate="nav.CHANNELS" class="ng-scope">Channels</span>
+				</a>
+			</li>
+	
+			<li ng-show="states['app.users']" ui-sref-active="active">
+				<a ui-sref="app.users" ui-sref-opts="{reload:true}" href="#/app/users/p1">
+					<span translate="nav.USERS" class="ng-scope">Users</span>
+				</a>
+			</li>
+	
+			<li ng-show="states['app.messages']" ui-sref-active="active">
+				<a ui-sref="app.messages" ui-sref-opts="{reload:true}" href="#/app/messages/p1">
+					<span translate="nav.MESSAGES" class="ng-scope">Messages</span>
+				</a>
+			</li>
+	
+			<li ng-show="states['app.books']" ui-sref-active="active">
+				<a ui-sref="app.books.list" ui-sref-opts="{reload:true}" href="#/app/books/list">
+					<span translate="nav.BOOKS" class="ng-scope">Books</span>
+				</a>
+			</li>
+	
+			<li ng-show="states['app.pages']" ui-sref-active="active">
+				<a ui-sref="app.pages.list" ui-sref-opts="{reload:true}" href="#/app/pages/list">
+					<span translate="nav.PAGES" class="ng-scope">Pages</span>
+				</a>
+			</li>
+	
+			<!--
+			<li>
+				<a class="help-button" href="{{currentHelpUrl}}" target="_blank">
+					<span translate="help.HELP" ></span>
+				</a>
+				<span
+					class		= "click"
+					ng-show		= "fnIsSuperAdmin()"
+					ng-click	= "customiseHelp()"
+				>
+					&nbsp;<i class="icon-edit"></i>
+				</span>
+			</li>
+			-->
+			<li>
+				<a class="help-button" ng-href="https://ar-go.zendesk.com/hc/en-us/" target="_blank" href="https://ar-go.zendesk.com/hc/en-us/">
+					<span translate="help.HELP" class="ng-scope">Help</span>
+				</a>
+			</li>
+			<li class="click" uib-tooltip-html="sVersion" tooltip-placement="right" ng-hide="bIsBurgerExtended == true">
+			<a>?</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="pull-right right-side-nav m-t-20" data-ng-init="init()">
+		<span class="click dropdown dropdown-user" uib-dropdown="">
+			<a class="dropdown-toggle clear" uib-dropdown-toggle="" aria-haspopup="true" aria-expanded="false">
+				<i class="icon-arrow-dropdown" aria-hidden="true"></i>
+				<span class="m-r-30 ng-binding">supertester</span>
+				<img class="thumbnail-user" onclick="" ng-src="https://apidev.bear2b.com//pics/userprofile_default_002.png?width=50&amp;height=50" alt="..." src="https://apidev.bear2b.com//pics/userprofile_default_002.png?width=50&amp;height=50">
+			</a>
+			<ul class="dropdown-menu">
+				<li>
+					<a ng-click="customiseUser()" translate="users.MANAGEACCOUNT" class="ng-scope">Manage Account</a>
+				</li>
+				<li>
+					<a ng-click="logout($event)" translate="common.LOGOUT" class="ng-scope">Logout</a>
+				</li>
+			</ul>
+		</span>
+
+	</div>
+
+</nav>
+</div>
+			<hr>
+			<div ng-hide="state.includes('app.assets.creator')" id="bottom-bar" class="flex flex-justify-space-between flex-align-center">
+				<ol class="breadcrumb ng-isolate-scope" go-breadcrumb="">
+	<!-- ngRepeat: step in steps --><li ng-repeat="step in steps" ng-class="{active: $last}" ng-switch="$last || !!step.abstract" class="ng-scope active">
+		<!-- ngSwitchWhen: false -->
+		<!-- ngSwitchWhen: true --><span ng-switch-when="true" class="ng-binding ng-scope">Dashboard</span><!-- end ngSwitchWhen: -->
+	</li><!-- end ngRepeat: step in steps --></ol>
+				<div class="flex flex-align-center">
+					<div class="hidden-xs">
+						<span translate="nav.APPNAME" class="ng-scope">App : </span><span class="ng-binding">BEAR</span>
+					</div>
+					<!-- ngIf: isMultiClient && (aClients.length > 1) --><div ng-if="isMultiClient &amp;&amp; (aClients.length > 1)" ng-show="iClientView" style="width:230px" id="client-select" class="m-l-10 ng-scope" ng-class="{'subclient' : bIsSubClient}">
+						<p class="text-greylight text-bold no-m">
+							<span translate="nav.CLIENT" class="ng-scope">Clients</span>
+							&nbsp;
+							<span class="icon-close click ng-hide" ng-show="bIsSubClient" ng-click="fnSelectClient(session.user.client)"></span>
+						</p>
+						<client-select selectonclick="true" onselect="fnSelectClient(oItem)" selectedid="5" displayemptyoption="true" placeholderkey="messages.ALLCLIENTS" allowself="true" class="ng-isolate-scope select2-hidden-accessible" data-select2-id="1" tabindex="-1" aria-hidden="true"><option value="5" selected="" data-select2-id="3">BEARDEV</option></client-select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="2" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-hpka-container"><span class="select2-selection__rendered" id="select2-hpka-container" role="textbox" aria-readonly="true" title="BEARDEV">BEARDEV</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+					</div><!-- end ngIf: isMultiClient && (aClients.length > 1) -->
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+</div>
+
+<div id="app-content" class="ng-scope">
+	<a href="" class="off-screen-toggle hide" ui-toggle-class="off-screen" data-target=".app-aside">
+	</a>
+
+	<!-- uiView: --><div ng-attr-id="{{(state.includes('app.assets.creator')) ? 'assets-page' : ''}}" class="wrap ng-scope" ui-view="" id=""><div ng-controller="DashboardController" class="ng-scope">
+	<div class="row">
+		<!-- temporary complex ng-class because it will revert back as soon as SP feed their feed -->
+		<div class="no-p col-md-8" ng-class="bShowDownloads ? 'col-md-8' : 'col-md-6'">
+			<div class="row">
+				<div class="dashboard-block m-t-10 col-sm-4" ng-class="bShowDownloads ? 'col-sm-4' : 'col-sm-6'">
+					<div class="section stats no-m">
+						<div class="panel-heading">
+							<a ui-sref="app.campaigns.list.folder({iFolderId:null,page:1})" ui-sref-opts="{reload:true}" href="#/app/campaigns/list//p1">
+								<span translate="nav.CAMPAIGNS" class="ng-scope">Campaigns</span>
+							</a>
+						</div>
+						<span class="pie-text ng-binding">560</span>
+						<div class="h-full stats-pie"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+							<canvas id="campaigns-pie" style="width: 222px; height: 150px; display: block;" width="222" height="150" class="chartjs-render-monitor"></canvas>
+						</div>
+						<div class="text-center font-18 m-t-30">
+							<p class="text-greenflash"><span class="text-bold ng-binding">557</span>&nbsp;<span translate="dashboard.ACTIVE" class="ng-scope">Active</span> </p>
+							<p class="text-greendark"><span class="text-bold ng-binding">3</span>&nbsp;<span translate="dashboard.INACTIVE" class="ng-scope">Inactive</span> </p>
+						</div>
+					</div>
+				</div>
+				<div class="dashboard-block m-t-10  col-sm-4" ng-class="bShowDownloads ? 'col-sm-4' : 'col-sm-6'">
+					<div class="section stats no-m">
+						<div class="panel-heading ng-scope" translate="common.entity.MARKERS">Markers</div>
+						<span class="pie-text ng-binding">2K</span>
+						<div class="h-full stats-pie"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+							<canvas id="markers-pie" width="222" height="150" class="chartjs-render-monitor" style="display: block; width: 222px; height: 150px;"></canvas>
+						</div>
+						<div class="text-center font-18 m-t-30">
+							<p class="text-greenflash"><span class="text-bold ng-binding">2573</span>&nbsp;<span translate="dashboard.ACTIVE" class="ng-scope">Active</span> </p>
+							<p class="text-greendark"><span class="text-bold ng-binding">341</span>&nbsp;<span translate="dashboard.INACTIVE" class="ng-scope">Inactive</span> </p>
+						</div>
+
+					</div>
+				</div>
+				<!-- ngIf: bShowDownloads --><div ng-if="bShowDownloads" class="col-sm-4 dashboard-block m-t-10 ng-scope">
+					<div class="section stats no-m">
+						<div class="panel-heading ng-scope" translate="stats.DOWNLOADS">Downloads</div>
+						<span class="pie-text ng-binding">5K</span>
+						<div class="h-full stats-pie"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+							<canvas id="downloads-pie" width="222" height="150" class="chartjs-render-monitor" style="display: block; width: 222px; height: 150px;"></canvas>
+						</div>
+						<div class="text-center font-18 m-t-30">
+							<p class="text-greenflash"><span class="text-bold ng-binding">1276</span>&nbsp;<span translate="common.OS_ANDROID" class="ng-scope">Android</span> </p>
+							<p class="text-greendark"><span class="text-bold ng-binding">4027</span>&nbsp;<span translate="common.OS_IOS" class="ng-scope">iOS</span> </p>
+						</div>
+
+					</div>
+				</div><!-- end ngIf: bShowDownloads -->
+			</div>
+		</div>
+		<div class="dashboard-block m-t-10 col-md-4" ng-class="bShowDownloads ? 'col-md-4' : 'col-md-6'">
+			<div class="section stats no-m">
+				<div class="panel-heading ng-scope" translate="nav.news.LASTNEWS">Latest news</div>
+				<div id="carousel-news" class="carousel slide auto m-t-10 news-small" ng-class="{'news-small' : bShowDownloads}" data-ride="carousel" ng-show="news &amp;&amp; news.length > 0">
+					<ol class="carousel-indicators"><li data-target="#carousel-news" data-slide-to="0" class="active"></li><li data-target="#carousel-news" data-slide-to="1" class=""></li><li data-target="#carousel-news" data-slide-to="2" class=""></li><li data-target="#carousel-news" data-slide-to="3" class=""></li><li data-target="#carousel-news" data-slide-to="4" class=""></li></ol>
+						<!-- Carousel items -->
+						<div class="carousel-inner h-full">
+							<!-- ngRepeat: new in news --><div class="item ng-scope active" ng-class="{'active' : $index == 0}" ng-repeat="new in news">
+								<div class="h-full flex flex-align-center">
+									<a class="news-thumb background-cover" style="background-image:url('https://blog.ar-go.co/wp-content/uploads/2020/05/WebinaARGO.png')" target="_blank" ng-href="https://blog.ar-go.co/blog/2020/11/15/webinaires/" href="https://blog.ar-go.co/blog/2020/11/15/webinaires/">
+									</a>
+									<div class="news-content m-l-30">
+										<p class="news-title m-t-10"><a class="text-grey ng-binding" target="_blank" ng-href="https://blog.ar-go.co/blog/2020/11/15/webinaires/" href="https://blog.ar-go.co/blog/2020/11/15/webinaires/">Webinaires</a></p>
+										<p class="m-t-10 ng-binding ng-hide" ng-hide="bShowDownloads" ng-bind-html="(new.description | truncate:100) ">
+
+
+
+
+
+
+Revivez les webinaires ARGO organisés par notre équipe.  L'objectif est de partager un certai…</p>
+										<p class="m-t-20"><a class="news-link" target="_blank" ng-href="https://blog.ar-go.co/blog/2020/11/15/webinaires/" href="https://blog.ar-go.co/blog/2020/11/15/webinaires/">Read More</a></p>
+									</div>
+								</div>
+							</div><!-- end ngRepeat: new in news --><div class="item ng-scope" ng-class="{'active' : $index == 0}" ng-repeat="new in news">
+								<div class="h-full flex flex-align-center">
+									<a class="news-thumb background-cover" style="background-image:url('https://blog.ar-go.co/wp-content/uploads/2020/06/Incollables8-e1594625691120.png')" target="_blank" ng-href="https://blog.ar-go.co/blog/2020/06/26/lachat-in-app-designe-un-achat-pouvant-seffectuer-au-sein-meme-dune-application-mobile/" href="https://blog.ar-go.co/blog/2020/06/26/lachat-in-app-designe-un-achat-pouvant-seffectuer-au-sein-meme-dune-application-mobile/">
+									</a>
+									<div class="news-content m-l-30">
+										<p class="news-title m-t-10"><a class="text-grey ng-binding" target="_blank" ng-href="https://blog.ar-go.co/blog/2020/06/26/lachat-in-app-designe-un-achat-pouvant-seffectuer-au-sein-meme-dune-application-mobile/" href="https://blog.ar-go.co/blog/2020/06/26/lachat-in-app-designe-un-achat-pouvant-seffectuer-au-sein-meme-dune-application-mobile/">L’achat  in-app  désigne un achat pouvant s’effectuer au sein mêm…</a></p>
+										<p class="m-t-10 ng-binding ng-hide" ng-hide="bShowDownloads" ng-bind-html="(new.description | truncate:100) ">
+
+
+ARtillery Intelligence prévoit une augmentation fulgurante des recettes liées à l’achat in-app su…</p>
+										<p class="m-t-20"><a class="news-link" target="_blank" ng-href="https://blog.ar-go.co/blog/2020/06/26/lachat-in-app-designe-un-achat-pouvant-seffectuer-au-sein-meme-dune-application-mobile/" href="https://blog.ar-go.co/blog/2020/06/26/lachat-in-app-designe-un-achat-pouvant-seffectuer-au-sein-meme-dune-application-mobile/">Read More</a></p>
+									</div>
+								</div>
+							</div><!-- end ngRepeat: new in news --><div class="item ng-scope" ng-class="{'active' : $index == 0}" ng-repeat="new in news">
+								<div class="h-full flex flex-align-center">
+									<a class="news-thumb background-cover" style="background-image:url('https://blog.ar-go.co/wp-content/uploads/2020/06/Incollables7-e1594625725237.png')" target="_blank" ng-href="https://blog.ar-go.co/blog/2020/06/26/la-realite-augmentee-ra-ne-se-limite-pas-aux-filtres-snapchat/" href="https://blog.ar-go.co/blog/2020/06/26/la-realite-augmentee-ra-ne-se-limite-pas-aux-filtres-snapchat/">
+									</a>
+									<div class="news-content m-l-30">
+										<p class="news-title m-t-10"><a class="text-grey ng-binding" target="_blank" ng-href="https://blog.ar-go.co/blog/2020/06/26/la-realite-augmentee-ra-ne-se-limite-pas-aux-filtres-snapchat/" href="https://blog.ar-go.co/blog/2020/06/26/la-realite-augmentee-ra-ne-se-limite-pas-aux-filtres-snapchat/">La Réalité Augmentée (RA) ne se limite pas aux filtres Snapchat</a></p>
+										<p class="m-t-10 ng-binding ng-hide" ng-hide="bShowDownloads" ng-bind-html="(new.description | truncate:100) ">
+
+
+Les marques peuvent tirer parti de la RA pour accroître leur engagement et leurs ventes.
+
+
+
+Voici…</p>
+										<p class="m-t-20"><a class="news-link" target="_blank" ng-href="https://blog.ar-go.co/blog/2020/06/26/la-realite-augmentee-ra-ne-se-limite-pas-aux-filtres-snapchat/" href="https://blog.ar-go.co/blog/2020/06/26/la-realite-augmentee-ra-ne-se-limite-pas-aux-filtres-snapchat/">Read More</a></p>
+									</div>
+								</div>
+							</div><!-- end ngRepeat: new in news --><div class="item ng-scope" ng-class="{'active' : $index == 0}" ng-repeat="new in news">
+								<div class="h-full flex flex-align-center">
+									<a class="news-thumb background-cover" style="background-image:url('https://blog.ar-go.co/wp-content/uploads/2020/06/Incollables5-e1594625747896.png')" target="_blank" ng-href="https://blog.ar-go.co/blog/2020/06/08/limportance-de-la-realite-augmentee-dans-le-storytelling-des-marques/" href="https://blog.ar-go.co/blog/2020/06/08/limportance-de-la-realite-augmentee-dans-le-storytelling-des-marques/">
+									</a>
+									<div class="news-content m-l-30">
+										<p class="news-title m-t-10"><a class="text-grey ng-binding" target="_blank" ng-href="https://blog.ar-go.co/blog/2020/06/08/limportance-de-la-realite-augmentee-dans-le-storytelling-des-marques/" href="https://blog.ar-go.co/blog/2020/06/08/limportance-de-la-realite-augmentee-dans-le-storytelling-des-marques/">L’importance de la réalité augmentée dans le storytelling des mar…</a></p>
+										<p class="m-t-10 ng-binding ng-hide" ng-hide="bShowDownloads" ng-bind-html="(new.description | truncate:100) ">
+
+
+La Réalité Augmentée (RA) engage le consommateur en l'incitant à aller chercher l'information 🔍
+…</p>
+										<p class="m-t-20"><a class="news-link" target="_blank" ng-href="https://blog.ar-go.co/blog/2020/06/08/limportance-de-la-realite-augmentee-dans-le-storytelling-des-marques/" href="https://blog.ar-go.co/blog/2020/06/08/limportance-de-la-realite-augmentee-dans-le-storytelling-des-marques/">Read More</a></p>
+									</div>
+								</div>
+							</div><!-- end ngRepeat: new in news --><div class="item ng-scope" ng-class="{'active' : $index == 0}" ng-repeat="new in news">
+								<div class="h-full flex flex-align-center">
+									<a class="news-thumb background-cover" style="background-image:url('https://blog.ar-go.co/wp-content/uploads/2020/06/Incollables4.png')" target="_blank" ng-href="https://blog.ar-go.co/blog/2020/06/08/la-realite-augmentee-montre-son-utilite-au-dela-de-leffet-wow/" href="https://blog.ar-go.co/blog/2020/06/08/la-realite-augmentee-montre-son-utilite-au-dela-de-leffet-wow/">
+									</a>
+									<div class="news-content m-l-30">
+										<p class="news-title m-t-10"><a class="text-grey ng-binding" target="_blank" ng-href="https://blog.ar-go.co/blog/2020/06/08/la-realite-augmentee-montre-son-utilite-au-dela-de-leffet-wow/" href="https://blog.ar-go.co/blog/2020/06/08/la-realite-augmentee-montre-son-utilite-au-dela-de-leffet-wow/">La réalité augmentée montre son utilité au-delà de l’effet ‘Wow’</a></p>
+										<p class="m-t-10 ng-binding ng-hide" ng-hide="bShowDownloads" ng-bind-html="(new.description | truncate:100) ">
+
+
+La Réalité Augmentée (RA) s'avère être un moyen de communication efficace au-delà de son effet "w…</p>
+										<p class="m-t-20"><a class="news-link" target="_blank" ng-href="https://blog.ar-go.co/blog/2020/06/08/la-realite-augmentee-montre-son-utilite-au-dela-de-leffet-wow/" href="https://blog.ar-go.co/blog/2020/06/08/la-realite-augmentee-montre-son-utilite-au-dela-de-leffet-wow/">Read More</a></p>
+									</div>
+								</div>
+							</div><!-- end ngRepeat: new in news -->
+						</div>
+
+						<a class="carousel-control left" href="#carousel-news" data-slide="prev">‹</a>
+						<a class="carousel-control right" href="#carousel-news" data-slide="next">›</a>
+
+				</div>
+				<span ng-show="!news || news.length == 0" translate="nav.news.ERROR" class="ng-scope ng-hide">Cannot load news for the moment. <a href="http://blog.bear2b.com" target="blank">Check out the blog!</a></span>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div id="marker-recent" class="col-md-12 dashboard-block ranking">
+			<div class="section no-m">
+				<div class="panel-heading ng-scope" translate="dashboard.LATEST_MARKERS_UPD">Recently modified</div>
+				<div class="panel-body flex">
+
+					<a class="carousel-control left click" ng-click="fnScrollToPrevRecent()" ng-hide="latestMarkers.length==0">
+						‹
+					</a>
+					<a class="carousel-control right click" ng-click="fnScrollToNextRecent()" ng-hide="latestMarkers.length==0">
+						›
+					</a>
+					<div class="flex ranking-list">
+						<h4 class="panel-empty-message ng-scope ng-hide" translate="dashboard.LATEST_MARKERS_TOOLTIP" ng-show="latestMarkers.length==0">Recently modified markers</h4>
+						<!-- ngRepeat: marker in latestMarkers --><div ng-repeat="marker in latestMarkers" class="ng-scope">
+							<editor-link book-id="2257" page-id="50557"><a href="https://editor-dev.ar-go.co/index.html?bookId=2257&amp;pageId=50557&amp;bearApi=https://apidev.bear2b.com" target="_blank"><ng-transclude>
+								<div class="click hover-light rank-container ng-scope">
+									<div class="img background-contain" style="background-image: url(https://apidev.bear2b.com/media/13075458645ce4f5562c1974.20369342.png?width=250&amp;height=250&amp;keep_ratio=1);"></div>
+									<div class="overlay"></div>
+									<p class="m-t-10 ng-binding">test cover</p>
+									<b class="font-24 ng-binding">5ce4f55466f…</b>
+								</div>
+							</ng-transclude></a></editor-link>
+						</div><!-- end ngRepeat: marker in latestMarkers --><div ng-repeat="marker in latestMarkers" class="ng-scope">
+							<editor-link book-id="2257" page-id="50559"><a href="https://editor-dev.ar-go.co/index.html?bookId=2257&amp;pageId=50559&amp;bearApi=https://apidev.bear2b.com" target="_blank"><ng-transclude>
+								<div class="click hover-light rank-container ng-scope">
+									<div class="img background-contain" style="background-image: url(https://apidev.bear2b.com/media/21395691905ce501fa951092.36083475.jpg?width=250&amp;height=250&amp;keep_ratio=1);"></div>
+									<div class="overlay"></div>
+									<p class="m-t-10 ng-binding">test cover</p>
+									<b class="font-24 ng-binding">5ce501f9283…</b>
+								</div>
+							</ng-transclude></a></editor-link>
+						</div><!-- end ngRepeat: marker in latestMarkers --><div ng-repeat="marker in latestMarkers" class="ng-scope">
+							<editor-link book-id="2257" page-id="49588"><a href="https://editor-dev.ar-go.co/index.html?bookId=2257&amp;pageId=49588&amp;bearApi=https://apidev.bear2b.com" target="_blank"><ng-transclude>
+								<div class="click hover-light rank-container ng-scope">
+									<div class="img background-contain" style="background-image: url(https://apidev.bear2b.com/media/1465336365cb70bbeda3443.26951588.jpg?width=250&amp;height=250&amp;keep_ratio=1);"></div>
+									<div class="overlay"></div>
+									<p class="m-t-10 ng-binding">test cover</p>
+									<b class="font-24 ng-binding">5cb70bbd7ce…</b>
+								</div>
+							</ng-transclude></a></editor-link>
+						</div><!-- end ngRepeat: marker in latestMarkers --><div ng-repeat="marker in latestMarkers" class="ng-scope">
+							<editor-link book-id="2913" page-id="53229"><a href="https://editor-dev.ar-go.co/index.html?bookId=2913&amp;pageId=53229&amp;bearApi=https://apidev.bear2b.com" target="_blank"><ng-transclude>
+								<div class="click hover-light rank-container ng-scope">
+									<div class="img background-contain" style="background-image: url(https://apidev.bear2b.com/media/19763177485f4e62100377c5.04104871.jpg?width=250&amp;height=250&amp;keep_ratio=1);"></div>
+									<div class="overlay"></div>
+									<p class="m-t-10 ng-binding">Test duplicates</p>
+									<b class="font-24 ng-binding">5f4e620e593…</b>
+								</div>
+							</ng-transclude></a></editor-link>
+						</div><!-- end ngRepeat: marker in latestMarkers --><div ng-repeat="marker in latestMarkers" class="ng-scope">
+							<editor-link book-id="2499" page-id="48131"><a href="https://editor-dev.ar-go.co/index.html?bookId=2499&amp;pageId=48131&amp;bearApi=https://apidev.bear2b.com" target="_blank"><ng-transclude>
+								<div class="click hover-light rank-container ng-scope">
+									<div class="img background-contain" style="background-image: url(https://apidev.bear2b.com/media/9668819275c3601b870b2b1.46661259.jpg?width=250&amp;height=250&amp;keep_ratio=1);"></div>
+									<div class="overlay"></div>
+									<p class="m-t-10 ng-binding">en</p>
+									<b class="font-24 ng-binding">shot video …</b>
+								</div>
+							</ng-transclude></a></editor-link>
+						</div><!-- end ngRepeat: marker in latestMarkers --><div ng-repeat="marker in latestMarkers" class="ng-scope">
+							<editor-link book-id="2257" page-id="50849"><a href="https://editor-dev.ar-go.co/index.html?bookId=2257&amp;pageId=50849&amp;bearApi=https://apidev.bear2b.com" target="_blank"><ng-transclude>
+								<div class="click hover-light rank-container ng-scope">
+									<div class="img background-contain" style="background-image: url(https://apidev.bear2b.com/media/10597061045cff73ec0036a3.61745483.jpg?width=250&amp;height=250&amp;keep_ratio=1);"></div>
+									<div class="overlay"></div>
+									<p class="m-t-10 ng-binding">test cover</p>
+									<b class="font-24 ng-binding">5cff73e8349…</b>
+								</div>
+							</ng-transclude></a></editor-link>
+						</div><!-- end ngRepeat: marker in latestMarkers --><div ng-repeat="marker in latestMarkers" class="ng-scope">
+							<editor-link book-id="2782" page-id="52956"><a href="https://editor-dev.ar-go.co/index.html?bookId=2782&amp;pageId=52956&amp;bearApi=https://apidev.bear2b.com" target="_blank"><ng-transclude>
+								<div class="click hover-light rank-container ng-scope">
+									<div class="img background-contain" style="background-image: url(https://apidev.bear2b.com/media/11114687775e4e567d369300.83146155.jpg?width=250&amp;height=250&amp;keep_ratio=1);"></div>
+									<div class="overlay"></div>
+									<p class="m-t-10 ng-binding">dev*GrandOptical_rea…</p>
+									<b class="font-24 ng-binding">dev*GrandOp…</b>
+								</div>
+							</ng-transclude></a></editor-link>
+						</div><!-- end ngRepeat: marker in latestMarkers --><div ng-repeat="marker in latestMarkers" class="ng-scope">
+							<editor-link book-id="2499" page-id="53243"><a href="https://editor-dev.ar-go.co/index.html?bookId=2499&amp;pageId=53243&amp;bearApi=https://apidev.bear2b.com" target="_blank"><ng-transclude>
+								<div class="click hover-light rank-container ng-scope">
+									<div class="img background-contain" style="background-image: url(https://apidev.bear2b.com/media/3584969255f5f2efd62df83.20678753.jpg?width=250&amp;height=250&amp;keep_ratio=1);"></div>
+									<div class="overlay"></div>
+									<p class="m-t-10 ng-binding">en</p>
+									<b class="font-24 ng-binding">audio test</b>
+								</div>
+							</ng-transclude></a></editor-link>
+						</div><!-- end ngRepeat: marker in latestMarkers --><div ng-repeat="marker in latestMarkers" class="ng-scope">
+							<editor-link book-id="2257" page-id="49587"><a href="https://editor-dev.ar-go.co/index.html?bookId=2257&amp;pageId=49587&amp;bearApi=https://apidev.bear2b.com" target="_blank"><ng-transclude>
+								<div class="click hover-light rank-container ng-scope">
+									<div class="img background-contain" style="background-image: url(https://apidev.bear2b.com/media/3823103375cb70bb58a0027.51145597.jpg?width=250&amp;height=250&amp;keep_ratio=1);"></div>
+									<div class="overlay"></div>
+									<p class="m-t-10 ng-binding">test cover</p>
+									<b class="font-24 ng-binding">5cb70bb3997…</b>
+								</div>
+							</ng-transclude></a></editor-link>
+						</div><!-- end ngRepeat: marker in latestMarkers --><div ng-repeat="marker in latestMarkers" class="ng-scope">
+							<editor-link book-id="2782" page-id="53031"><a href="https://editor-dev.ar-go.co/index.html?bookId=2782&amp;pageId=53031&amp;bearApi=https://apidev.bear2b.com" target="_blank"><ng-transclude>
+								<div class="click hover-light rank-container ng-scope">
+									<div class="img background-contain" style="background-image: url(https://apidev.bear2b.com/media/17629216515e5e29266bcbc2.45200428.jpg?width=250&amp;height=250&amp;keep_ratio=1);"></div>
+									<div class="overlay"></div>
+									<p class="m-t-10 ng-binding">dev*GrandOptical_rea…</p>
+									<b class="font-24 ng-binding">5e5e2924d75…</b>
+								</div>
+							</ng-transclude></a></editor-link>
+						</div><!-- end ngRepeat: marker in latestMarkers -->
+						<p class="text-center p-10 ng-scope ng-hide" ng-show="bLoadRecent" translate="common.LOADING">Loading...</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row" ng-show="bIsClientParent">
+		<div id="campaigns-featured" class="col-md-12 dashboard-block ranking">
+			<div class="section no-m">
+				<div class="panel-heading ng-scope" translate="dashboard.FEATURED_CAMPAIGNS">Featured campaigns</div>
+				<div class="panel-body flex">
+					<a class="carousel-control left click" ng-click="fnScrollToPrevFeatured()" ng-hide="latestMarkers.length==0">
+						‹
+					</a>
+					<a class="carousel-control right click" ng-click="fnScrollToNextFeatured()" ng-hide="latestMarkers.length==0">
+						›
+					</a>
+					<div class="flex ranking-list">
+						<h4 class="panel-empty-message ng-scope ng-hide" translate="dashboard.FEATURED_CAMPAIGNS_TOOLTIP" ng-show="latestMarkers.length==0">Campaigns featured in mobile app</h4>
+						<!-- ngRepeat: campaign in featuredCampaigns --><a ng-repeat="campaign in featuredCampaigns" ui-sref="app.markers({id:campaign.id})" class="ng-scope" href="#/app/markers/707">
+							<div class="click hover-light rank-container">
+								<div class="img background-contain" style="background-image: url(https://apidev.bear2b.com/media/2755057375cfe46f404ce78.21943436.jpg?width=250&amp;height=250&amp;keep_ratio=1);"></div>
+								<div class="overlay"></div>
+								<!--<p class="m-t-10">{{marker.book_name | truncate:20}}</p>-->
+								<b class="font-24 ng-binding">dev* Bear L…</b>
+							</div>
+						</a><!-- end ngRepeat: campaign in featuredCampaigns --><a ng-repeat="campaign in featuredCampaigns" ui-sref="app.markers({id:campaign.id})" class="ng-scope" href="#/app/markers/1356">
+							<div class="click hover-light rank-container">
+								<div class="img background-contain" style="background-image: url(https://apidev.bear2b.com/media/9803707675cb71126be3ff3.08917802.jpg?width=250&amp;height=250&amp;keep_ratio=1);"></div>
+								<div class="overlay"></div>
+								<!--<p class="m-t-10">{{marker.book_name | truncate:20}}</p>-->
+								<b class="font-24 ng-binding">nom</b>
+							</div>
+						</a><!-- end ngRepeat: campaign in featuredCampaigns --><a ng-repeat="campaign in featuredCampaigns" ui-sref="app.markers({id:campaign.id})" class="ng-scope" href="#/app/markers/1374">
+							<div class="click hover-light rank-container">
+								<div class="img background-contain" style="background-image: url(https://apidev.bear2b.com/media/20635405085cb7112ad54703.17093929.jpg?width=250&amp;height=250&amp;keep_ratio=1);"></div>
+								<div class="overlay"></div>
+								<!--<p class="m-t-10">{{marker.book_name | truncate:20}}</p>-->
+								<b class="font-24 ng-binding">RATP/B341/R</b>
+							</div>
+						</a><!-- end ngRepeat: campaign in featuredCampaigns --><a ng-repeat="campaign in featuredCampaigns" ui-sref="app.markers({id:campaign.id})" class="ng-scope" href="#/app/markers/1440">
+							<div class="click hover-light rank-container">
+								<div class="img background-contain" style="background-image: url(https://apidev.bear2b.com/media/531838465cb7113015ffb6.24188482.jpg?width=250&amp;height=250&amp;keep_ratio=1);"></div>
+								<div class="overlay"></div>
+								<!--<p class="m-t-10">{{marker.book_name | truncate:20}}</p>-->
+								<b class="font-24 ng-binding">fr name</b>
+							</div>
+						</a><!-- end ngRepeat: campaign in featuredCampaigns --><a ng-repeat="campaign in featuredCampaigns" ui-sref="app.markers({id:campaign.id})" class="ng-scope" href="#/app/markers/1451">
+							<div class="click hover-light rank-container">
+								<div class="img background-contain" style="background-image: url(https://apidev.bear2b.com/media/3969343525d10f98939ff22.12080748.jpg?width=250&amp;height=250&amp;keep_ratio=1);"></div>
+								<div class="overlay"></div>
+								<!--<p class="m-t-10">{{marker.book_name | truncate:20}}</p>-->
+								<b class="font-24 ng-binding">Thomas test</b>
+							</div>
+						</a><!-- end ngRepeat: campaign in featuredCampaigns --><a ng-repeat="campaign in featuredCampaigns" ui-sref="app.markers({id:campaign.id})" class="ng-scope" href="#/app/markers/1710">
+							<div class="click hover-light rank-container">
+								<div class="img background-contain" style="background-image: url(https://apidev.bear2b.com/media/6641195895cb7113af000c2.79794063.jpg?width=250&amp;height=250&amp;keep_ratio=1);"></div>
+								<div class="overlay"></div>
+								<!--<p class="m-t-10">{{marker.book_name | truncate:20}}</p>-->
+								<b class="font-24 ng-binding">dev* Social</b>
+							</div>
+						</a><!-- end ngRepeat: campaign in featuredCampaigns --><a ng-repeat="campaign in featuredCampaigns" ui-sref="app.markers({id:campaign.id})" class="ng-scope" href="#/app/markers/1711">
+							<div class="click hover-light rank-container">
+								<div class="img background-contain" style="background-image: url(https://apidev.bear2b.com/media/7535890705cb711409946a0.89424211.jpg?width=250&amp;height=250&amp;keep_ratio=1);"></div>
+								<div class="overlay"></div>
+								<!--<p class="m-t-10">{{marker.book_name | truncate:20}}</p>-->
+								<b class="font-24 ng-binding">dev* Videos…</b>
+							</div>
+						</a><!-- end ngRepeat: campaign in featuredCampaigns --><a ng-repeat="campaign in featuredCampaigns" ui-sref="app.markers({id:campaign.id})" class="ng-scope" href="#/app/markers/1722">
+							<div class="click hover-light rank-container">
+								<div class="img background-contain" style="background-image: url(https://apidev.bear2b.com/media/8612760685cb71144947ec8.44325337.jpg?width=250&amp;height=250&amp;keep_ratio=1);"></div>
+								<div class="overlay"></div>
+								<!--<p class="m-t-10">{{marker.book_name | truncate:20}}</p>-->
+								<b class="font-24 ng-binding">testlucas2</b>
+							</div>
+						</a><!-- end ngRepeat: campaign in featuredCampaigns --><a ng-repeat="campaign in featuredCampaigns" ui-sref="app.markers({id:campaign.id})" class="ng-scope" href="#/app/markers/1809">
+							<div class="click hover-light rank-container">
+								<div class="img background-contain" style="background-image: url(https://apidev.bear2b.com/media/11285317225cb71149161848.80889347.jpg?width=250&amp;height=250&amp;keep_ratio=1);"></div>
+								<div class="overlay"></div>
+								<!--<p class="m-t-10">{{marker.book_name | truncate:20}}</p>-->
+								<b class="font-24 ng-binding">Norauto</b>
+							</div>
+						</a><!-- end ngRepeat: campaign in featuredCampaigns --><a ng-repeat="campaign in featuredCampaigns" ui-sref="app.markers({id:campaign.id})" class="ng-scope" href="#/app/markers/1818">
+							<div class="click hover-light rank-container">
+								<div class="img background-contain" style="background-image: url(https://apidev.bear2b.com/media/16813842125cb71150a7d898.10404266.jpg?width=250&amp;height=250&amp;keep_ratio=1);"></div>
+								<div class="overlay"></div>
+								<!--<p class="m-t-10">{{marker.book_name | truncate:20}}</p>-->
+								<b class="font-24 ng-binding">new subclie…</b>
+							</div>
+						</a><!-- end ngRepeat: campaign in featuredCampaigns -->
+						<p class="text-center p-10 ng-scope ng-hide" ng-show="bLoadFeatured" translate="common.LOADING">Loading...</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row block-redirect">
+		<div class="col-md-12 dashboard-block">
+			<div class="row section flex flex-justify-space-between flex-column-md">
+				<div class="block-redirect">
+					<a ui-sref="app.stats.global" ui-sref-opts="{reload:true}" class="content" href="#/app/stats/overview">
+						<div class="redirect-circle"><i class="icon-dashboard-stats"></i></div>
+
+						<span class="btn btn-success ng-scope" translate="dashboard.REDIRECT_STATS">See all stats</span>
+					</a>
+					<div class="background" style="background-image:url('./assets/img/dashboard/fond-stats.png')"></div>
+					<div class="overlay"></div>
+				</div>
+				<div class="block-redirect">
+					<a class="content" ng-href="https://www.youtube.com/channel/UCcyifb_wTIBfyoX-Bsc6zSw/" target="_blank" href="https://www.youtube.com/channel/UCcyifb_wTIBfyoX-Bsc6zSw/">
+						<div class="redirect-circle"><i class="icon-dashboard-video"></i></div>
+						<span class="btn btn-success ng-scope" translate="dashboard.REDIRECT_TUTO">Go to our tutorials</span>
+					</a>
+					<div class="background" ng-style="{'background-image':'url(assets/img/dashboard/fond-video.png)'}" style="background-image: url(&quot;assets/img/dashboard/fond-video.png&quot;);"></div>
+					<div class="overlay"></div>
+				</div>
+				<div class="block-redirect">
+					<a class="content" ng-href="https://ar-go.zendesk.com/hc/en-us/" target="_blank" href="https://ar-go.zendesk.com/hc/en-us/">
+						<div class="redirect-circle"><i class="icon-dashboard-doc"></i></div>
+						<span class="btn btn-success ng-scope" translate="dashboard.REDIRECT_FAQ">Frequently asked questions</span>
+					</a>
+					<div class="background" ng-style="{'background-image':'url(assets/img/dashboard/fond-doc.png)'}" style="background-image: url(&quot;assets/img/dashboard/fond-doc.png&quot;);"></div>
+					<div class="overlay"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+</div>
+</div>
+</div>
+		<div id="toast-container" ng-class="[config.position, config.animation]" toaster-options="{
+				'close-button'		: true,
+				'debug'				: false,
+				'newestOnTop'		: true,
+				'position-class'	: 'toast-top-right',
+				'progress-bar'		: true,
+				'showDuration'		: '300',
+				'hideDuration'		: '1000',
+				'timeOut'			: '5000',
+				'extendedTimeOut'	: '1000',
+				'showEasing'		: 'swing',
+				'hideEasing'		: 'linear',
+				'showMethod'		: 'fadeIn',
+				'hideMethod'		: 'fadeOut',
+				'time-out'			:
+				{
+					'toast-warning'	: 10000,
+					'toast-error'	: -1,
+					'toast-success'	: 5000,
+				}
+			}" class="toast-top-right"><!-- ngRepeat: toaster in toasters --></div>
+
+		<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=acb3d545-184f-453f-afe4-dc8016b01da9"></script>
+		<script>
+			function addZero(i)
+			{
+				return (i < 10 ? '0'+i : i);
+			}
+
+			function timeStampize(url)
+			{
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function()
+				{
+					if(xhr.readyState === 4)
+					{
+						var date = new Date(xhr.getResponseHeader('Last-Modified'));
+						var str = date.getFullYear()
+							+''+addZero((date.getMonth()+1))
+							+''+addZero(date.getDate())
+							+''+addZero(date.getHours())
+							+''+addZero(date.getMinutes());
+						var newUrl = url.replace(/(\.[^\.]+)$/, '.'+str+'$1');
+						var type = url.substring(url.lastIndexOf('.'));
+						var dDest, sFile;
+
+						if(type == '.js')
+						{
+							dDest		= document.getElementsByTagName('body')[0];
+							sFile		= document.createElement('script');
+							sFile.type	= 'text/javascript';
+							sFile.src	= newUrl;
+
+							dDest.appendChild(sFile);
+						}
+						else if(type == '.css')
+						{
+							dDest		= document.getElementsByTagName('head')[0];
+							sFile		= document.createElement('link');
+							sFile.href	= 'css/bear.min.'+str+'.css';
+							sFile.rel	= 'stylesheet';
+
+							dDest.appendChild(sFile);
+						}
+					}
+				};
+
+				xhr.open('HEAD', url, false);
+				xhr.send();
+			}
+
+			timeStampize('js/app.min.js');
+			timeStampize('css/bear.min.css');
+		</script><script type="text/javascript" src="js/app.min.202011161619.js"></script>
+	
+
+<iframe data-product="web_widget" title="No content" tabindex="-1" aria-hidden="true" src="about:blank" style="width: 0px; height: 0px; border: 0px; position: absolute; top: -9999px;"></iframe><div><iframe title="Opens a widget where you can find more information" id="launcher" tabindex="0" style="width: 136px; height: 50px; padding: 0px; margin: 10px 20px; position: fixed; bottom: 0px; overflow: visible; opacity: 1; border: 0px; z-index: 999998; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; right: 0px;"></iframe><iframe title="Find more information here" id="webWidget" tabindex="-1" style="width: 374px; max-height: calc(100vh - 32px); height: 572px; position: fixed; opacity: 0; border: 0px; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; top: -9999px; visibility: hidden; z-index: 999999;"></iframe></div></body></html>

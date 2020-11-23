@@ -1,0 +1,177 @@
+[1606150157.572][INFO]: Starting ChromeDriver 86.0.4240.22 (398b0743353ff36fb1b82468f63a3a93b4e2e89e-refs/branch-heads/4240@{#378}) on port 13463
+[1606150157.573][INFO]: Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1606150157.916][INFO]: [fda4205de49f26bb5b91ed46e2ad7ae4] COMMAND InitSession {
+   "capabilities": {
+      "firstMatch": [ {
+         "acceptInsecureCerts": true,
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [ "--proxy-bypass-list=\u003C-loopback>", "--disable-dev-shm-usage", "--no-sandbox" ],
+            "excludeSwitches": [ "enable-automation", "load-extension" ],
+            "extensions": [  ],
+            "prefs": {
+               "credentials_enable_service": false,
+               "download.default_directory": "/Users/valentin/IdeaProjects/First_Test/build/downloads/1606150151520_51621_13",
+               "plugins.always_open_pdf_externally": true
+            }
+         },
+         "pageLoadStrategy": "normal"
+      } ]
+   },
+   "desiredCapabilities": {
+      "acceptInsecureCerts": true,
+      "acceptSslCerts": true,
+      "browserName": "chrome",
+      "goog:chromeOptions": {
+         "args": [ "--proxy-bypass-list=\u003C-loopback>", "--disable-dev-shm-usage", "--no-sandbox" ],
+         "excludeSwitches": [ "enable-automation", "load-extension" ],
+         "extensions": [  ],
+         "prefs": {
+            "credentials_enable_service": false,
+            "download.default_directory": "/Users/valentin/IdeaProjects/First_Test/build/downloads/1606150151520_51621_13",
+            "plugins.always_open_pdf_externally": true
+         }
+      },
+      "handlesAlerts": true,
+      "javascriptEnabled": true,
+      "pageLoadStrategy": "normal",
+      "takesScreenshot": true
+   }
+}
+[1606150157.918][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "credentials_enable_service": false,
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "download": {
+      "default_directory": "/Users/valentin/IdeaProjects/First_Test/build/downloads/1606150151520_51621_13"
+   },
+   "plugins": {
+      "always_open_pdf_externally": true
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1606150157.918][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1606150157.919][INFO]: Launching chrome: /Applications/Google Chrome.app/Contents/MacOS/Google Chrome --disable-background-networking --disable-client-side-phishing-detection --disable-default-apps --disable-dev-shm-usage --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --enable-blink-features=ShadowDOMV0 --enable-logging --ignore-certificate-errors --log-level=0 --no-first-run --no-sandbox --password-store=basic --proxy-bypass-list=<-loopback> --remote-debugging-port=0 --test-type=webdriver --use-mock-keychain --user-data-dir=/var/folders/vm/h1lk221s7xj5h4yx5fsm5x140000gn/T/.com.google.Chrome.Nal3vW data:,
+[1606150159.433][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1606150159.441][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1606150159.497][INFO]: [fda4205de49f26bb5b91ed46e2ad7ae4] RESPONSE InitSession {
+   "capabilities": {
+      "acceptInsecureCerts": true,
+      "browserName": "chrome",
+      "browserVersion": "86.0.4240.198",
+      "chrome": {
+         "chromedriverVersion": "86.0.4240.22 (398b0743353ff36fb1b82468f63a3a93b4e2e89e-refs/branch-heads/4240@{#378})",
+         "userDataDir": "/var/folders/vm/h1lk221s7xj5h4yx5fsm5x140000gn/T/.com.google.Chrome.Nal3vW"
+      },
+      "goog:chromeOptions": {
+         "debuggerAddress": "localhost:53616"
+      },
+      "networkConnectionEnabled": false,
+      "pageLoadStrategy": "normal",
+      "platformName": "mac os x",
+      "proxy": {
+
+      },
+      "setWindowRect": true,
+      "strictFileInteractability": false,
+      "timeouts": {
+         "implicit": 0,
+         "pageLoad": 300000,
+         "script": 30000
+      },
+      "unhandledPromptBehavior": "dismiss and notify",
+      "webauthn:virtualAuthenticators": true
+   },
+   "sessionId": "fda4205de49f26bb5b91ed46e2ad7ae4"
+}
+[1606150159.752][INFO]: [fda4205de49f26bb5b91ed46e2ad7ae4] COMMAND SetWindowRect {
+   "height": 768,
+   "width": 1366
+}
+[1606150159.753][INFO]: Waiting for pending navigations...
+[1606150159.754][INFO]: Done waiting for pending navigations. Status: ok
+[1606150159.862][INFO]: Waiting for pending navigations...
+[1606150159.863][INFO]: Done waiting for pending navigations. Status: ok
+[1606150159.863][INFO]: [fda4205de49f26bb5b91ed46e2ad7ae4] RESPONSE SetWindowRect {
+   "height": 768,
+   "width": 1366,
+   "x": 22,
+   "y": 45
+}
+[1606150159.872][INFO]: [fda4205de49f26bb5b91ed46e2ad7ae4] COMMAND SetTimeouts {
+   "pageLoad": 30000
+}
+[1606150159.872][INFO]: [fda4205de49f26bb5b91ed46e2ad7ae4] RESPONSE SetTimeouts
+[1606150159.887][INFO]: [fda4205de49f26bb5b91ed46e2ad7ae4] COMMAND Navigate {
+   "url": "https://manager-dev.ar-go.co/#/app/dashboard"
+}
+[1606150159.887][INFO]: Waiting for pending navigations...
+[1606150159.889][INFO]: Done waiting for pending navigations. Status: ok
+[1606150160.218][INFO]: Waiting for pending navigations...
+[1606150189.890][SEVERE]: Timed out receiving message from renderer: 29.670
+[1606150189.943][INFO]: Timed out. Stopping navigation...
+[1606150189.971][SEVERE]: Timed out receiving message from renderer: 29.670
+[1606150189.971][INFO]: Done waiting for pending navigations. Status: timeout: Timed out receiving message from renderer: 29.670
+[1606150189.971][INFO]: [fda4205de49f26bb5b91ed46e2ad7ae4] RESPONSE Navigate ERROR timeout: Timed out receiving message from renderer: 29.670
+  (Session info: chrome=86.0.4240.198)
+[1606150189.971][INFO]: [fda4205de49f26bb5b91ed46e2ad7ae4] COMMAND Quit {
+
+}
+[1606150190.078][INFO]: [fda4205de49f26bb5b91ed46e2ad7ae4] RESPONSE Quit
