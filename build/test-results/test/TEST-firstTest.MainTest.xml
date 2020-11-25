@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="firstTest.MainTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-25T14:52:38" hostname="Mac-mini-3.local" time="0.359">
+<testsuite name="firstTest.MainTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-25T15:58:05" hostname="Mac-mini-3.local" time="0.175">
   <properties/>
-  <testcase name="checkHomePageUi" classname="firstTest.MainTest" time="0.359"/>
+  <testcase name="checkHomePageUi" classname="firstTest.MainTest" time="0.175"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
