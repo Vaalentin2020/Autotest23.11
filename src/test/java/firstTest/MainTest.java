@@ -1,8 +1,6 @@
 package firstTest;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 public class MainTest {
     String login = "supertester";
@@ -11,11 +9,12 @@ public class MainTest {
     HomePage homePage = new HomePage();
     @Test
     public void loginTest(){
-        LoginPage.loginTest(login, password);
+
+        loginPage.loginTest(login, password);
     }
     @Test
     public void checkHomePageUi(){
-        homePage.helpButton(login, password);
+        homePage.helpButton();
     }
 }
 
