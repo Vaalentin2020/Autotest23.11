@@ -11,7 +11,7 @@ public class MainTest {
     HomePage homePage = new HomePage();
     @Test
     public void loginTest(){
-        loginPage.testLogin(login, password);
+        LoginPage.loginTest(login, password);
     }
     @Test
     public void checkHomePageUi(){
