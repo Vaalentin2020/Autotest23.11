@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.url;
 
 public class HomePage {
-    public void helpButton(){
+    public static void helpButton(){
         $(By.className("help-button")).click();
         url().equals("https://support.ar-go.co/hc/en-us");
 

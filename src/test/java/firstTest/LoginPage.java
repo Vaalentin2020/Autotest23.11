@@ -16,7 +16,6 @@ public class LoginPage {
         $(byAttribute("ng-hide","isLoading")).click();
         sleep(4000);
         $(By.className("help-button")).click();
-
     }
 
 
