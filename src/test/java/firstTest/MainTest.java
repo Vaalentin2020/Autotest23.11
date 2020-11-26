@@ -1,6 +1,5 @@
 package firstTest;
 
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -12,19 +11,25 @@ public class MainTest {
     //HomePage homePage = new HomePage();
 
     //Вызываем метод класса страницы авторизации
-    @BeforeSuite
+    @BeforeTest
     public void loginTest(){
         LoginPage.loginTest(login, password);
     }
     //Вызываем метод проверки кнопки Help на главной странице
-    @Test
-    public void checkHomePageUi(){
+    @Test(enabled = false)
+    public void checkHelpButton(){
         HomePage.helpButton();
     }
+
     //Вызываем метод проверки смены языка на главной странице
-    @Test
+    @Test(enabled = false)
     public void checkLanguageChange(){
         HomePage.languageChange();
+    }
+    //Вызываем метод, для проверки страницы статистики
+    @Test
+    public void checkStatsUI(){
+        StatisticPage.StatsPageUi();
     }
 }
 
