@@ -4,14 +4,14 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class MainTest {
-    String login = "supertester";
-    String password = "777";
+    public String login = "supertester";
+    public String password = "777";
     //Мы вызываем методы напрямую,без создания их экземпляров
     //LoginPage loginPage = new LoginPage();
     //HomePage homePage = new HomePage();
 
     //Вызываем метод класса страницы авторизации
-    @BeforeTest
+    @Test
     public void loginTest(){
         LoginPage.loginTest(login, password);
     }
@@ -27,9 +27,15 @@ public class MainTest {
         HomePage.languageChange();
     }
     //Вызываем метод, для проверки страницы статистики
-    @Test
+    @Test(enabled = false)
     public void checkStatsUI(){
         StatisticPage.StatsPageUi();
+    }
+    //Вызываем метод проверки возможности создания новой кампании
+    @Test(enabled = false)
+    public void checkCreationNewCampaign(){
+        CampaignsPage.createNewCampaign();
+
     }
 }
 

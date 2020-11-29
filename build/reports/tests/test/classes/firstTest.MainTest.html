@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">6.256s</div>
+<div class="counter">35.729s</div>
 <p>duration</p>
 </div>
 </td>
@@ -66,19 +66,21 @@
 <li>
 <a href="#tab1">Tests</a>
 </li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
 </ul>
 <div id="tab0" class="tab">
 <h2>Failed tests</h2>
 <div class="test">
-<a name="checkStatsUI"></a>
-<h3 class="failures">checkStatsUI</h3>
+<a name="loginTest"></a>
+<h3 class="failures">loginTest</h3>
 <span class="code">
-<pre>Element not found {By.linkText: Marker's ranking}
+<pre>Element not found {[placeholder=&quot;Login&quot;]}
 Expected: visible
-Screenshot: file:/Users/valentin/IdeaProjects/First_Test/build/reports/tests/1606405868171.0.png
-Page source: file:/Users/valentin/IdeaProjects/First_Test/build/reports/tests/1606405868171.0.html
+Page source: file:/C:/Users/VAL/IdeaProjects/Autotest23.11/build/reports/tests/1606669133964.0.html
 Timeout: 4 s.
-Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;link text&quot;,&quot;selector&quot;:&quot;Marker's ranking&quot;}
+Caused by: NoSuchWindowException: no such window: target window already closed
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:56)
 	at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:133)
 	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:87)
@@ -87,9 +89,9 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {&
 	at com.codeborne.selenide.commands.Commands.execute(Commands.java:153)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:104)
 	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:70)
-	at com.sun.proxy.$Proxy10.shouldBe(Unknown Source)
-	at firstTest.StatisticPage.StatsPageUi(StatisticPage.java:16)
-	at firstTest.MainTest.checkStatsUI(MainTest.java:32)
+	at com.sun.proxy.$Proxy9.shouldBe(Unknown Source)
+	at firstTest.LoginPage.loginTest(LoginPage.java:14)
+	at firstTest.MainTest.loginTest(MainTest.java:16)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -140,17 +142,16 @@ Caused by: NoSuchElementException: no such element: Unable to locate element: {&
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;link text&quot;,&quot;selector&quot;:&quot;Marker's ranking&quot;}
-  (Session info: chrome=86.0.4240.198)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=87.0.4280.66)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Mac-mini-3.local', ip: '127.0.0.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '15.0.1'
+System info: host: 'VAL-ПК', ip: '192.168.0.8', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/vm/h1lk221s7xj...}, goog:chromeOptions: {debuggerAddress: localhost:52886}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 0ea9c67aa7af35e3339abbee455c70b4
-*** Element info: {Using=link text, value=Marker's ranking}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 87.0.4280.66, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: C:\Users\VAL\AppData\Local\...}, goog:chromeOptions: {debuggerAddress: localhost:61692}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 75d46fd03d383caafc7658df3f537308
+*** Element info: {Using=css selector, value=[placeholder=&quot;Login&quot;]}
+	at jdk.internal.reflect.GeneratedConstructorAccessor7.newInstance(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
@@ -161,8 +162,8 @@ Session ID: 0ea9c67aa7af35e3339abbee455c70b4
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:380)
-	at org.openqa.selenium.By$ByLinkText.findElement(By.java:220)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
 	at com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:65)
 	at com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:40)
@@ -184,11 +185,26 @@ Session ID: 0ea9c67aa7af35e3339abbee455c70b4
 </tr>
 </thead>
 <tr>
-<td class="failures">checkStatsUI</td>
-<td class="failures">6.256s</td>
+<td class="failures">loginTest</td>
+<td class="failures">35.729s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>SLF4J: Failed to load class &quot;org.slf4j.impl.StaticLoggerBinder&quot;.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Starting ChromeDriver 87.0.4280.20 (c99e81631faa0b2a448e658c0dbd8311fb04ddbd-refs/branch-heads/4280@{#355}) on port 30361
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+нояб. 29, 2020 7:58:23 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+</pre>
+</span>
 </div>
 </div>
 <div id="footer">
@@ -198,7 +214,7 @@ Session ID: 0ea9c67aa7af35e3339abbee455c70b4
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.3</a> at Nov 26, 2020, 6:51:08 PM</p>
+<a href="http://www.gradle.org">Gradle 6.3</a> at 29 нояб. 2020 г., 19:58:55</p>
 </div>
 </div>
 </body>
