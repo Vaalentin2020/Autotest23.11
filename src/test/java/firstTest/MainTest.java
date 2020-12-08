@@ -1,5 +1,6 @@
 package firstTest;
 
+
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -11,7 +12,8 @@ public class MainTest {
     //HomePage homePage = new HomePage();
 
     //Вызываем метод класса страницы авторизации
-    @Test
+
+    @BeforeTest
     public void loginTest(){
         LoginPage.loginTest(login, password);
     }
@@ -32,7 +34,7 @@ public class MainTest {
         StatisticPage.StatsPageUi();
     }
     //Вызываем метод проверки возможности создания новой кампании
-    @Test(enabled = false)
+    @Test
     public void checkCreationNewCampaign(){
         CampaignsPage.createNewCampaign();
 
