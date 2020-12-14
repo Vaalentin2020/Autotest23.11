@@ -3,17 +3,17 @@ package firstTest;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import static firstTest.CampaignsPage.*;
+
 
 public class MainTest {
-    public String login = "supertester";
-    public String password = "777";
-    //Мы вызываем методы напрямую,без создания их экземпляров
-    //LoginPage loginPage = new LoginPage();
-    //HomePage homePage = new HomePage();
+    public String login = "testuser23";
+    public String password = "Testuser23!";
+    public String companyName = "New company";
 
     //Вызываем метод класса страницы авторизации
 
-    @BeforeTest
+    @BeforeTest                                        /*Аннотация Before для логирования перед основным тестом*/
     public void loginTest(){
         LoginPage.loginTest(login, password);
     }
@@ -36,8 +36,12 @@ public class MainTest {
     //Вызываем метод проверки возможности создания новой кампании
     @Test
     public void checkCreationNewCampaign(){
-        CampaignsPage.createNewCampaign();
-
+            openCampaignPage();
+            clickToNewCampaignButton();
+            chooseTheLanguage();
+            insertNameOfCampaign(companyName);
+            uploadTheFile();
+            clickCreateButton();
     }
 }
 

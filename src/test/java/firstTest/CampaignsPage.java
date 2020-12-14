@@ -3,22 +3,38 @@ package firstTest;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import java.io.File;
 
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class CampaignsPage {
-    public static void createNewCampaign(){
-        $(byAttribute("translate","nav.CAMPAIGNS")).click();
-        sleep(4000);
-        $(By.cssSelector("#campaign-controler > button")).click();
-        $(By.className("select2-selection__placeholder")).click();
+    //Открыть страницу "Компании"
+    public static void openCampaignPage() {
+        $(byAttribute("translate", "nav.CAMPAIGNS")).click();
+    }
+    //Клик по кнопке "Создать компанию"
+    public static void clickToNewCampaignButton(){
+        $(By.cssSelector("#campaign-controler > button")).shouldHave(Condition.text("NEW CAMPAIGN")).click();
+    }
+    //Выбор языка новой компании(English)
+    public static void chooseTheLanguage(){
+        $(byAttribute("role", "presentation")).click();
         $(byText("English")).click();
-        $(byXpath("/html/body/div[1]/div/div/div[2]/form/div[1]/div[2]/div/div/div/input")).val("123");
-        $(byAttribute("accept","application/pdf")).uploadFromClasspath("https://topdnb.com/wp-content/uploads/2013/06/maxresdefault-55.jpg");
-
-       // C:\Users\Public\Pictures\Sample Pictures
-
-
+    }
+    //Название компании в поле ввода. Название передаем из MainTest
+    public static void insertNameOfCampaign(String companyName){
+        $(byCssSelector("body > div.modal.fade.ng-scope.ng-isolate-scope.in > div > div > div.modal-body.ng-scope > form > div:nth-child(1) > div.ng-isolate-scope > div > div > div > input")).val(companyName);
+    }
+    //Загрузка файла
+    public static  void uploadTheFile(){
+        File file = new File("src/test/java/firstTest/bill.pdf");
+        $(byTagName("input")).uploadFile(file);
+    }
+    //Клик по кнопке "Create"
+    public static void clickCreateButton(){
+        $(byAttribute("ng-click", "fnSubmitForm(oCampaign)")).click();
     }
 }

@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.url;
-
+//Переходим в статистику, проверяем наличие элементов на странице
 public class StatisticPage {
     public static void StatsPageUi(){
         $(byAttribute("translate", "nav.STATS")).click();
